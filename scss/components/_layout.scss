@@ -1,0 +1,49 @@
+// _layout.scss
+
+// should only contain structual elements defined by classes
+
+// Columns
+
+.full-col,
+.half-col,
+.third-col,
+.two-third-col,
+.fourth-col,
+.three-fourth-col {
+	// dev
+	border: 1px dashed red;
+}
+
+.full-col { width: 100%; }
+
+.half-col { width: 50%; }
+
+.third-col { width: 36%; }
+
+.two-third-col { width: 63%; }
+
+.fourth-col { width: 26%; }
+
+.three-fourth-col { width: 73%; }
+
+@media (max-width: 750px){
+	.full-col,
+	.half-col,
+	.third-col,
+	.two-third-col,
+	.fourth-col,
+	.three-fourth-col {
+		width: 100%;
+		float:none;
+	}
+}
+
+.u-two-col {
+	-webkit-columns: 2 200px;
+		-moz-columns: 2 200px;
+    columns: 2 200px;
+}
+
+.u-pull-right {
+	float:right !important;
+}
