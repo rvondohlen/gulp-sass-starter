@@ -15,29 +15,29 @@ gulp.task('styles', function() {
     .pipe(sourcemaps.init())
       .pipe(sass({ style: 'expanded', }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./build/css'));
+    .pipe(gulp.dest('./dist/css'));
 });
 
 // Scripts
 gulp.task('scripts', function () {
-   return gulp.src('js/*.js')
+   return gulp.src(['js/*.js', 'js/vendor/*.js'])
       .pipe(jshint())
       .pipe(jshint.reporter('default'))
-      .pipe(uglify())
+      //.pipe(uglify())
       .pipe(concat('app.js'))
-      .pipe(gulp.dest('./build/js'));
+      .pipe(gulp.dest('./dist/js'));
 });
 
 // Browser-sync 
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
-            baseDir: "./build"
+            baseDir: "./dist"
         }
     });
 });
 
 gulp.task('default', ['styles', 'scripts', 'browser-sync'], function () {
-    gulp.watch('scss/*.scss', ['styles', reload]);
+    gulp.watch(['scss/*.scss', 'scss/resets/*.css', 'scss/components/*.scss'], ['styles', reload]);
     gulp.watch('js/*.js', ['scripts', reload]);
 });

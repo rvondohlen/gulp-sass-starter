@@ -1,6 +1,6 @@
 {
-  "name": "callboxes",
-  "version": "0.0.1",
+  "name": "rv-gulp-sass-starter",
+  "version": "0.1.0",
   "devDependencies": {
     "browser-sync": "^1.7.1",
     "gulp": "^3.8.7",
