@@ -1,4 +1,10 @@
-gulp-sass-starter
+#gulp-sass-starter
 =================
+v1.0
 
-pared down foundation framework
+Install dependencies:
+	npm install
+
+Run:
+	gulp
+
